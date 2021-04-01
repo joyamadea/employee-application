@@ -28,9 +28,7 @@ export class PopoverComponent implements OnInit {
   async deleteAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
+      header: 'Are you sure you want to delete this employee?',
       buttons: [
         {
           text: 'Cancel',
@@ -54,12 +52,13 @@ export class PopoverComponent implements OnInit {
   delete(){
     this.employeeService.deleteEmployee(this.id).then((res: any) => {
       this.deleteToast();
+      this.router.navigate(['/home']);
     })
   }
 
   async deleteToast() {
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
+      message: 'Employee deleted',
       duration: 2000
     });
     toast.present();
