@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionChange)="filterList($event)" debounce="500" placeholder="Filter by first name"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let employee of employeeList" (click)="gotoDetail(employee.id)">
       <ion-avatar slot="start">

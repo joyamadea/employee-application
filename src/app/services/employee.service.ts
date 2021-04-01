@@ -11,11 +11,20 @@ export class EmployeeService {
     this.url = environment.link_url;
   }
 
-  getAllEmployees(){
-    let body = {
-      pages: 1,
-      row: 5
-    }
+  getAllEmployees1(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url+'users?page=1').subscribe(
+        (res) => {
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  getAllEmployees2(){
     return new Promise((resolve, reject) => {
       this.http.get(this.url+'users?page=2').subscribe(
         (res) => {
