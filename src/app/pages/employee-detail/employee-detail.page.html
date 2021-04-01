@@ -16,15 +16,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="flagLoaded">
+<ion-content *ngIf="flagLoaded" class="ion-padding">
   <ion-row>
-    <ion-col>
+    <ion-col size="5"></ion-col>
+    <ion-col size="2" class="ion-align-self-center">
       <ion-avatar >
         <img [src]="details.avatar">
       </ion-avatar>
     </ion-col>
+    <ion-col size="5"></ion-col>
   </ion-row>
   <ion-row>
-    <ion-col> {{ details.first_name }} {{ details.last_name }}</ion-col>
+    <ion-col size="4"></ion-col>
+    <ion-col size="4" class="ion-text-center"> {{ details.first_name }} {{ details.last_name }}</ion-col>
+    <ion-col size="4"></ion-col>
   </ion-row>
 </ion-content>
