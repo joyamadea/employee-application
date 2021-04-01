@@ -30,4 +30,8 @@ export class HomePage {
   gotoDetail(id){
     this.router.navigate(['/detail',id]);
   }
+
+  gotoAdd(){
+    this.router.navigate(['/add']);
+  }
 }

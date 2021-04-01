@@ -67,10 +67,7 @@ export class EmployeeService {
     });
   }
 
-  createEmployee(){
-    let body = {
-      first_name: 'Joy'
-    }
+  createEmployee(body){
     return new Promise((resolve, reject) => {
       this.http.post(this.url+'users/', body).subscribe(
         (res) => {

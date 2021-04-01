@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col>
+      Add Employee
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="addForm" (ngSubmit)="submitForm()">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">First Name</ion-label>
+          <ion-input formControlName="first_name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Last Name</ion-label>
+          <ion-input formControlName="last_name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Job</ion-label>
+          <ion-input formControlName="job"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-button expand="block"
+    type="submit">
+      Submit
+    </ion-button>
+  </form>
+</ion-content>
