@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { EmployeeService } from '../services/employee.service';
+import { Router } from '@angular/router';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { EmployeeService } from '../services/employee.service';
 export class HomePage {
   employeeList: any;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService, private router: Router) {}
 
   ngOnInit(){
     
@@ -24,5 +25,9 @@ export class HomePage {
       console.log(res);
       this.employeeList = res.data;
     })
+  }
+
+  gotoDetail(id){
+    this.router.navigate(['/detail',id]);
   }
 }

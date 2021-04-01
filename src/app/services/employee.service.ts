@@ -40,4 +40,49 @@ export class EmployeeService {
       );
     });
   }
+
+  deleteEmployee(id){
+    return new Promise((resolve, reject) => {
+      this.http.delete(this.url+'users/',id).subscribe(
+        (res) => {
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  editEmployee(id){
+    let body = {
+      first_name: 'Joy'
+    }
+    return new Promise((resolve, reject) => {
+      this.http.put(this.url+'users/'+id, body).subscribe(
+        (res) => {
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  createEmployee(){
+    let body = {
+      first_name: 'Joy'
+    }
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url+'users/', body).subscribe(
+        (res) => {
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
 }
